@@ -2,9 +2,11 @@
 
 # VIGILE
 
-**Tenir jusqu'à l'aube.**
+<p align="center">
+<strong>Tenir jusqu'à l'aube.</strong><br>
 Shooter de survie en vue subjective, dans le navigateur — une chapelle romane, huit heures de nuit,
 douze assauts de morts, et L'Officiant qui attend dans la nef.
+</p>
 
 [![Jouer en ligne](https://img.shields.io/badge/%E2%96%B6_JOUER-en_ligne-c8a86a?style=for-the-badge)](https://jfoissac.github.io/Vigile/)
 [![Aucun build](https://img.shields.io/badge/build-aucun-2ea043)](#sous-le-capot)
