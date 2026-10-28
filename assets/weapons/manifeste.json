@@ -1,0 +1,1818 @@
+{
+  "projet": "Vigile — pack d'armes FPS + bras (v4)",
+  "genere_le": "2026-10-22T21:49:30",
+  "blender": "5.2.1 LTS",
+  "script": "build_assets.py",
+  "conventions": {
+    "unites": "metres",
+    "repere_blender": "X=largeur, +Y=canon, +Z=haut",
+    "repere_gltf": "X=largeur, +Y=haut, -Z=canon (export_yup=True)",
+    "origine_armes": "poignee : point de contact de la main, sous la detente",
+    "origine_bras": "poignet (droit pour la paire SM_Bras_FPS)",
+    "echelle": 1.0,
+    "exemple_chargement": "weapon = gltf.scene ; weapon.rotation.set(0,0,0) ; le canon pointe deja vers -Z, la bouche est dans userData.bouche_m.gltf"
+  },
+  "armes": [
+    {
+      "id": "pistolet",
+      "nom": "Pistolet Mle 1935",
+      "type": "arme",
+      "fichier": "export/W_Pistolet.glb",
+      "octets": 110584,
+      "sha256": "861bc710ffe6d88549dedf1b54b31933e08a479ebfca96e82167949234353839",
+      "origine": "poignee (contact main)",
+      "direction_canon_gltf": "-Z",
+      "dimensions_m": {
+        "largeur_x": 0.0364,
+        "longueur_y": 0.2239,
+        "hauteur_z": 0.1523
+      },
+      "bornes_blender_m": {
+        "min": [
+          -0.0182,
+          -0.0639,
+          -0.0851
+        ],
+        "max": [
+          0.0182,
+          0.16,
+          0.0672
+        ]
+      },
+      "bornes_gltf_m": {
+        "min": [
+          -0.0182,
+          -0.0851,
+          -0.16
+        ],
+        "max": [
+          0.0182,
+          0.0672,
+          0.0639
+        ]
+      },
+      "sommets": 1310,
+      "triangles": 2492,
+      "materiaux": [
+        "Acier_fonce",
+        "Bois_noyer",
+        "Caoutchouc",
+        "Noir_arme",
+        "Laiton",
+        "Acier",
+        "Acier_bleui",
+        "Tritium"
+      ],
+      "materiaux_pbr": [
+        {
+          "nom": "Acier_fonce",
+          "baseColorFactor": [
+            0.0685,
+            0.0823,
+            0.0887,
+            1
+          ],
+          "metallicFactor": 0.82,
+          "roughnessFactor": 0.38,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Bois_noyer",
+          "baseColorFactor": [
+            0.2705,
+            0.1022,
+            0.0252,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.48,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Caoutchouc",
+          "baseColorFactor": [
+            0.0103,
+            0.0123,
+            0.0137,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.94,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Noir_arme",
+          "baseColorFactor": [
+            0.0252,
+            0.0307,
+            0.0331,
+            1
+          ],
+          "metallicFactor": 0.35,
+          "roughnessFactor": 0.52,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Laiton",
+          "baseColorFactor": [
+            0.5711,
+            0.3231,
+            0.0844,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.28,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier",
+          "baseColorFactor": [
+            0.3372,
+            0.3813,
+            0.3968,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.26,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier_bleui",
+          "baseColorFactor": [
+            0.0273,
+            0.0369,
+            0.0409,
+            1
+          ],
+          "metallicFactor": 0.9,
+          "roughnessFactor": 0.3,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Tritium",
+          "baseColorFactor": [
+            0.5776,
+            1,
+            0.8714,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.3,
+          "doubleSided": false,
+          "emissif": [
+            0.0953,
+            1,
+            0.4793
+          ],
+          "emissive_strength": 3
+        }
+      ],
+      "noeuds": [
+        "W_Pistolet"
+      ],
+      "maillages": [
+        "W_Pistolet_mesh"
+      ],
+      "os": [],
+      "bouche_m": {
+        "blender": [
+          0.0,
+          0.16,
+          0.04
+        ],
+        "gltf": [
+          0.0,
+          0.04,
+          -0.16
+        ]
+      },
+      "rendus": [
+        "renders/tech_pistolet.png",
+        "renders/perso_pistolet.png"
+      ]
+    },
+    {
+      "id": "revolver",
+      "nom": "Revolver de sacristie",
+      "type": "arme",
+      "fichier": "export/W_Revolver.glb",
+      "octets": 82436,
+      "sha256": "dbab0bc93e3e146491083adf2282f11cff93040fb9f6fae4d4a1b5bcc765609b",
+      "origine": "poignee (contact main)",
+      "direction_canon_gltf": "-Z",
+      "dimensions_m": {
+        "largeur_x": 0.049,
+        "longueur_y": 0.2953,
+        "hauteur_z": 0.1462
+      },
+      "bornes_blender_m": {
+        "min": [
+          -0.0245,
+          -0.0898,
+          -0.0855
+        ],
+        "max": [
+          0.0245,
+          0.2055,
+          0.0607
+        ]
+      },
+      "bornes_gltf_m": {
+        "min": [
+          -0.0245,
+          -0.0855,
+          -0.2055
+        ],
+        "max": [
+          0.0245,
+          0.0607,
+          0.0898
+        ]
+      },
+      "sommets": 1066,
+      "triangles": 2044,
+      "materiaux": [
+        "Acier",
+        "Acier_fonce",
+        "Laiton",
+        "Noir_arme",
+        "Acier_bleui",
+        "Bois_noyer"
+      ],
+      "materiaux_pbr": [
+        {
+          "nom": "Acier",
+          "baseColorFactor": [
+            0.3372,
+            0.3813,
+            0.3968,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.26,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier_fonce",
+          "baseColorFactor": [
+            0.0685,
+            0.0823,
+            0.0887,
+            1
+          ],
+          "metallicFactor": 0.82,
+          "roughnessFactor": 0.38,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Laiton",
+          "baseColorFactor": [
+            0.5711,
+            0.3231,
+            0.0844,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.28,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Noir_arme",
+          "baseColorFactor": [
+            0.0252,
+            0.0307,
+            0.0331,
+            1
+          ],
+          "metallicFactor": 0.35,
+          "roughnessFactor": 0.52,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier_bleui",
+          "baseColorFactor": [
+            0.0273,
+            0.0369,
+            0.0409,
+            1
+          ],
+          "metallicFactor": 0.9,
+          "roughnessFactor": 0.3,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Bois_noyer",
+          "baseColorFactor": [
+            0.2705,
+            0.1022,
+            0.0252,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.48,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "noeuds": [
+        "W_Revolver"
+      ],
+      "maillages": [
+        "W_Revolver_mesh"
+      ],
+      "os": [],
+      "bouche_m": {
+        "blender": [
+          0.0,
+          0.2055,
+          0.025
+        ],
+        "gltf": [
+          0.0,
+          0.025,
+          -0.2055
+        ]
+      },
+      "rendus": [
+        "renders/tech_revolver.png",
+        "renders/perso_revolver.png"
+      ]
+    },
+    {
+      "id": "pm",
+      "nom": "PM « Vêpres »",
+      "type": "arme",
+      "fichier": "export/W_PM.glb",
+      "octets": 104908,
+      "sha256": "804fd7e7c285b5055c0183e7e96840ca34ee374c19c8a74f27c9de56e34cf40c",
+      "origine": "poignee (contact main)",
+      "direction_canon_gltf": "-Z",
+      "dimensions_m": {
+        "largeur_x": 0.0713,
+        "longueur_y": 0.637,
+        "hauteur_z": 0.222
+      },
+      "bornes_blender_m": {
+        "min": [
+          -0.0206,
+          -0.301,
+          -0.1585
+        ],
+        "max": [
+          0.0507,
+          0.336,
+          0.0635
+        ]
+      },
+      "bornes_gltf_m": {
+        "min": [
+          -0.0206,
+          -0.1585,
+          -0.336
+        ],
+        "max": [
+          0.0507,
+          0.0635,
+          0.301
+        ]
+      },
+      "sommets": 1308,
+      "triangles": 2544,
+      "materiaux": [
+        "Acier_fonce",
+        "Acier",
+        "Acier_bleui",
+        "Noir_arme",
+        "Polymer",
+        "Caoutchouc"
+      ],
+      "materiaux_pbr": [
+        {
+          "nom": "Acier_fonce",
+          "baseColorFactor": [
+            0.0685,
+            0.0823,
+            0.0887,
+            1
+          ],
+          "metallicFactor": 0.82,
+          "roughnessFactor": 0.38,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier",
+          "baseColorFactor": [
+            0.3372,
+            0.3813,
+            0.3968,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.26,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier_bleui",
+          "baseColorFactor": [
+            0.0273,
+            0.0369,
+            0.0409,
+            1
+          ],
+          "metallicFactor": 0.9,
+          "roughnessFactor": 0.3,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Noir_arme",
+          "baseColorFactor": [
+            0.0252,
+            0.0307,
+            0.0331,
+            1
+          ],
+          "metallicFactor": 0.35,
+          "roughnessFactor": 0.52,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Polymer",
+          "baseColorFactor": [
+            0.0331,
+            0.0423,
+            0.0482,
+            1
+          ],
+          "metallicFactor": 0.04,
+          "roughnessFactor": 0.68,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Caoutchouc",
+          "baseColorFactor": [
+            0.0103,
+            0.0123,
+            0.0137,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.94,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "noeuds": [
+        "W_PM"
+      ],
+      "maillages": [
+        "W_PM_mesh"
+      ],
+      "os": [],
+      "bouche_m": {
+        "blender": [
+          0.0,
+          0.336,
+          0.032
+        ],
+        "gltf": [
+          0.0,
+          0.032,
+          -0.336
+        ]
+      },
+      "rendus": [
+        "renders/tech_pm.png",
+        "renders/perso_pm.png"
+      ]
+    },
+    {
+      "id": "fusil_assaut",
+      "nom": "Fusil d'assaut « Matines »",
+      "type": "arme",
+      "fichier": "export/W_FusilAssaut.glb",
+      "octets": 92680,
+      "sha256": "5bdf8f3c2a67bde227f184f6753419e87684f897c3e3b1726d5b4084a545144e",
+      "origine": "poignee (contact main)",
+      "direction_canon_gltf": "-Z",
+      "dimensions_m": {
+        "largeur_x": 0.0556,
+        "longueur_y": 0.8402,
+        "hauteur_z": 0.2726
+      },
+      "bornes_blender_m": {
+        "min": [
+          -0.0278,
+          -0.3382,
+          -0.1886
+        ],
+        "max": [
+          0.0278,
+          0.502,
+          0.084
+        ]
+      },
+      "bornes_gltf_m": {
+        "min": [
+          -0.0278,
+          -0.1886,
+          -0.502
+        ],
+        "max": [
+          0.0278,
+          0.084,
+          0.3382
+        ]
+      },
+      "sommets": 1118,
+      "triangles": 2104,
+      "materiaux": [
+        "Acier_fonce",
+        "Acier",
+        "Bois_noyer",
+        "Bois_clair",
+        "Acier_bleui",
+        "Noir_arme",
+        "Caoutchouc"
+      ],
+      "materiaux_pbr": [
+        {
+          "nom": "Acier_fonce",
+          "baseColorFactor": [
+            0.0685,
+            0.0823,
+            0.0887,
+            1
+          ],
+          "metallicFactor": 0.82,
+          "roughnessFactor": 0.38,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier",
+          "baseColorFactor": [
+            0.3372,
+            0.3813,
+            0.3968,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.26,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Bois_noyer",
+          "baseColorFactor": [
+            0.2705,
+            0.1022,
+            0.0252,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.48,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Bois_clair",
+          "baseColorFactor": [
+            0.5149,
+            0.2623,
+            0.0802,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.44,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier_bleui",
+          "baseColorFactor": [
+            0.0273,
+            0.0369,
+            0.0409,
+            1
+          ],
+          "metallicFactor": 0.9,
+          "roughnessFactor": 0.3,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Noir_arme",
+          "baseColorFactor": [
+            0.0252,
+            0.0307,
+            0.0331,
+            1
+          ],
+          "metallicFactor": 0.35,
+          "roughnessFactor": 0.52,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Caoutchouc",
+          "baseColorFactor": [
+            0.0103,
+            0.0123,
+            0.0137,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.94,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "noeuds": [
+        "W_FusilAssaut"
+      ],
+      "maillages": [
+        "W_FusilAssaut_mesh"
+      ],
+      "os": [],
+      "bouche_m": {
+        "blender": [
+          0.0,
+          0.502,
+          0.03
+        ],
+        "gltf": [
+          0.0,
+          0.03,
+          -0.502
+        ]
+      },
+      "rendus": [
+        "renders/tech_fusil_assaut.png",
+        "renders/perso_fusil_assaut.png"
+      ]
+    },
+    {
+      "id": "fusil_pompe",
+      "nom": "Fusil à pompe « Saint-Éloi »",
+      "type": "arme",
+      "fichier": "export/W_FusilPompe.glb",
+      "octets": 70384,
+      "sha256": "dbce80ecbb3b9a8f87cf51af75d6f91084e1f0ecd41b8a525ad24b095cf6476a",
+      "origine": "poignee (contact main)",
+      "direction_canon_gltf": "-Z",
+      "dimensions_m": {
+        "largeur_x": 0.0536,
+        "longueur_y": 1.0061,
+        "hauteur_z": 0.1474
+      },
+      "bornes_blender_m": {
+        "min": [
+          -0.0268,
+          -0.2861,
+          -0.0946
+        ],
+        "max": [
+          0.0268,
+          0.72,
+          0.0528
+        ]
+      },
+      "bornes_gltf_m": {
+        "min": [
+          -0.0268,
+          -0.0946,
+          -0.72
+        ],
+        "max": [
+          0.0268,
+          0.0528,
+          0.2861
+        ]
+      },
+      "sommets": 814,
+      "triangles": 1548,
+      "materiaux": [
+        "Acier_fonce",
+        "Acier",
+        "Noir_arme",
+        "Acier_bleui",
+        "Laiton",
+        "Bois_noyer",
+        "Bois_clair",
+        "Caoutchouc"
+      ],
+      "materiaux_pbr": [
+        {
+          "nom": "Acier_fonce",
+          "baseColorFactor": [
+            0.0685,
+            0.0823,
+            0.0887,
+            1
+          ],
+          "metallicFactor": 0.82,
+          "roughnessFactor": 0.38,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier",
+          "baseColorFactor": [
+            0.3372,
+            0.3813,
+            0.3968,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.26,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Noir_arme",
+          "baseColorFactor": [
+            0.0252,
+            0.0307,
+            0.0331,
+            1
+          ],
+          "metallicFactor": 0.35,
+          "roughnessFactor": 0.52,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier_bleui",
+          "baseColorFactor": [
+            0.0273,
+            0.0369,
+            0.0409,
+            1
+          ],
+          "metallicFactor": 0.9,
+          "roughnessFactor": 0.3,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Laiton",
+          "baseColorFactor": [
+            0.5711,
+            0.3231,
+            0.0844,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.28,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Bois_noyer",
+          "baseColorFactor": [
+            0.2705,
+            0.1022,
+            0.0252,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.48,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Bois_clair",
+          "baseColorFactor": [
+            0.5149,
+            0.2623,
+            0.0802,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.44,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Caoutchouc",
+          "baseColorFactor": [
+            0.0103,
+            0.0123,
+            0.0137,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.94,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "noeuds": [
+        "W_FusilPompe"
+      ],
+      "maillages": [
+        "W_FusilPompe_mesh"
+      ],
+      "os": [],
+      "bouche_m": {
+        "blender": [
+          0.0,
+          0.72,
+          0.03
+        ],
+        "gltf": [
+          0.0,
+          0.03,
+          -0.72
+        ]
+      },
+      "rendus": [
+        "renders/tech_fusil_pompe.png",
+        "renders/perso_fusil_pompe.png"
+      ]
+    },
+    {
+      "id": "carabine",
+      "nom": "Carabine « Laudes »",
+      "type": "arme",
+      "fichier": "export/W_Carabine.glb",
+      "octets": 167088,
+      "sha256": "37554d26478ef1c75a3e2ac6c1cc3f9fb0c2f3d3bd2ce81b231928855f4ba31c",
+      "origine": "poignee (contact main)",
+      "direction_canon_gltf": "-Z",
+      "dimensions_m": {
+        "largeur_x": 0.0951,
+        "longueur_y": 1.1046,
+        "hauteur_z": 0.2252
+      },
+      "bornes_blender_m": {
+        "min": [
+          -0.025,
+          -0.3121,
+          -0.0932
+        ],
+        "max": [
+          0.0701,
+          0.7925,
+          0.132
+        ]
+      },
+      "bornes_gltf_m": {
+        "min": [
+          -0.025,
+          -0.0932,
+          -0.7925
+        ],
+        "max": [
+          0.0701,
+          0.132,
+          0.3121
+        ]
+      },
+      "sommets": 2018,
+      "triangles": 3944,
+      "materiaux": [
+        "Bois_noyer",
+        "Bois_clair",
+        "Caoutchouc",
+        "Acier_fonce",
+        "Acier",
+        "Laiton",
+        "Acier_bleui",
+        "Noir_arme",
+        "Verre_lunette",
+        "Tritium"
+      ],
+      "materiaux_pbr": [
+        {
+          "nom": "Bois_noyer",
+          "baseColorFactor": [
+            0.2705,
+            0.1022,
+            0.0252,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.48,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Bois_clair",
+          "baseColorFactor": [
+            0.5149,
+            0.2623,
+            0.0802,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.44,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Caoutchouc",
+          "baseColorFactor": [
+            0.0103,
+            0.0123,
+            0.0137,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.94,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier_fonce",
+          "baseColorFactor": [
+            0.0685,
+            0.0823,
+            0.0887,
+            1
+          ],
+          "metallicFactor": 0.82,
+          "roughnessFactor": 0.38,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier",
+          "baseColorFactor": [
+            0.3372,
+            0.3813,
+            0.3968,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.26,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Laiton",
+          "baseColorFactor": [
+            0.5711,
+            0.3231,
+            0.0844,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.28,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier_bleui",
+          "baseColorFactor": [
+            0.0273,
+            0.0369,
+            0.0409,
+            1
+          ],
+          "metallicFactor": 0.9,
+          "roughnessFactor": 0.3,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Noir_arme",
+          "baseColorFactor": [
+            0.0252,
+            0.0307,
+            0.0331,
+            1
+          ],
+          "metallicFactor": 0.35,
+          "roughnessFactor": 0.52,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Verre_lunette",
+          "baseColorFactor": [
+            0.0232,
+            0.0578,
+            0.0802,
+            1
+          ],
+          "metallicFactor": 0.6,
+          "roughnessFactor": 0.08,
+          "doubleSided": false,
+          "emissif": [
+            0.0201,
+            0.1153,
+            0.1063
+          ]
+        },
+        {
+          "nom": "Tritium",
+          "baseColorFactor": [
+            0.5776,
+            1,
+            0.8714,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.3,
+          "doubleSided": false,
+          "emissif": [
+            0.0953,
+            1,
+            0.4793
+          ],
+          "emissive_strength": 3
+        }
+      ],
+      "noeuds": [
+        "W_Carabine"
+      ],
+      "maillages": [
+        "W_Carabine_mesh"
+      ],
+      "os": [],
+      "bouche_m": {
+        "blender": [
+          0.0,
+          0.7925,
+          0.03
+        ],
+        "gltf": [
+          0.0,
+          0.03,
+          -0.7925
+        ]
+      },
+      "rendus": [
+        "renders/tech_carabine.png",
+        "renders/perso_carabine.png"
+      ]
+    },
+    {
+      "id": "lance_grenades",
+      "nom": "Lance-grenades de chœur",
+      "type": "arme",
+      "fichier": "export/W_LanceGrenades.glb",
+      "octets": 119468,
+      "sha256": "5c717ce6a58b535a85c5f61d1997ce584a9ea2ddfca488952b166f8defa61cd2",
+      "origine": "poignee (contact main)",
+      "direction_canon_gltf": "-Z",
+      "dimensions_m": {
+        "largeur_x": 0.106,
+        "longueur_y": 0.575,
+        "hauteur_z": 0.1962
+      },
+      "bornes_blender_m": {
+        "min": [
+          -0.053,
+          -0.239,
+          -0.104
+        ],
+        "max": [
+          0.053,
+          0.336,
+          0.0922
+        ]
+      },
+      "bornes_gltf_m": {
+        "min": [
+          -0.053,
+          -0.104,
+          -0.336
+        ],
+        "max": [
+          0.053,
+          0.0922,
+          0.239
+        ]
+      },
+      "sommets": 1488,
+      "triangles": 2888,
+      "materiaux": [
+        "Acier_fonce",
+        "Acier",
+        "Noir_arme",
+        "Laiton",
+        "Acier_bleui",
+        "Polymer",
+        "Caoutchouc"
+      ],
+      "materiaux_pbr": [
+        {
+          "nom": "Acier_fonce",
+          "baseColorFactor": [
+            0.0685,
+            0.0823,
+            0.0887,
+            1
+          ],
+          "metallicFactor": 0.82,
+          "roughnessFactor": 0.38,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier",
+          "baseColorFactor": [
+            0.3372,
+            0.3813,
+            0.3968,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.26,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Noir_arme",
+          "baseColorFactor": [
+            0.0252,
+            0.0307,
+            0.0331,
+            1
+          ],
+          "metallicFactor": 0.35,
+          "roughnessFactor": 0.52,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Laiton",
+          "baseColorFactor": [
+            0.5711,
+            0.3231,
+            0.0844,
+            1
+          ],
+          "metallicFactor": 0.88,
+          "roughnessFactor": 0.28,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Acier_bleui",
+          "baseColorFactor": [
+            0.0273,
+            0.0369,
+            0.0409,
+            1
+          ],
+          "metallicFactor": 0.9,
+          "roughnessFactor": 0.3,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Polymer",
+          "baseColorFactor": [
+            0.0331,
+            0.0423,
+            0.0482,
+            1
+          ],
+          "metallicFactor": 0.04,
+          "roughnessFactor": 0.68,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Caoutchouc",
+          "baseColorFactor": [
+            0.0103,
+            0.0123,
+            0.0137,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.94,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "noeuds": [
+        "W_LanceGrenades"
+      ],
+      "maillages": [
+        "W_LanceGrenades_mesh"
+      ],
+      "os": [],
+      "bouche_m": {
+        "blender": [
+          0.0,
+          0.336,
+          0.04
+        ],
+        "gltf": [
+          0.0,
+          0.04,
+          -0.336
+        ]
+      },
+      "rendus": [
+        "renders/tech_lance_grenades.png",
+        "renders/perso_lance_grenades.png"
+      ]
+    }
+  ],
+  "bras": [
+    {
+      "id": "bras_fps",
+      "nom": "Bras FPS (paire assemblee)",
+      "type": "bras",
+      "fichier": "export/SM_Bras_FPS.glb",
+      "octets": 180056,
+      "sha256": "3c79dd5725d62beccec3a2b22496bf0cac01cd58e7fc8176bba389c44e94ba6a",
+      "origine": "poignet",
+      "dimensions_m": {
+        "largeur_x": 0.4123,
+        "longueur_y": 0.6227,
+        "hauteur_z": 0.2431
+      },
+      "bornes_blender_m": {
+        "min": [
+          -0.2951,
+          -0.3012,
+          -0.1631
+        ],
+        "max": [
+          0.1172,
+          0.3215,
+          0.08
+        ]
+      },
+      "bornes_gltf_m": {
+        "min": [
+          -0.2951,
+          -0.1631,
+          -0.3215
+        ],
+        "max": [
+          0.1172,
+          0.08,
+          0.3012
+        ]
+      },
+      "sommets": 2720,
+      "triangles": 5160,
+      "materiaux": [
+        "Cuir_gant",
+        "Peau",
+        "Tissu_manche"
+      ],
+      "materiaux_pbr": [
+        {
+          "nom": "Cuir_gant",
+          "baseColorFactor": [
+            0.1022,
+            0.0612,
+            0.0343,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.86,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Peau",
+          "baseColorFactor": [
+            0.3231,
+            0.2232,
+            0.1384,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.84,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Tissu_manche",
+          "baseColorFactor": [
+            0.0242,
+            0.0284,
+            0.0307,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.92,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "noeuds": [
+        "SM_Bras_FPS"
+      ],
+      "maillages": [
+        "SM_Bras_FPS_mesh"
+      ],
+      "os": [],
+      "note_rig": "maillage statique (view-model) : aucun os, pose figee",
+      "prise_m": {
+        "blender": [
+          -0.043,
+          0.072,
+          0.05
+        ],
+        "gltf": [
+          -0.043,
+          0.05,
+          -0.072
+        ]
+      },
+      "usage": "pose de tir a deux mains ; origine au poignet droit"
+    },
+    {
+      "id": "main_droite",
+      "nom": "Main droite (prise pistolet)",
+      "type": "bras",
+      "fichier": "export/SM_Main_Droite.glb",
+      "octets": 87536,
+      "sha256": "0aced7632f46ca3fa99556558dd9f9dbec12acb00ee73d4ae60cff9d55f32a50",
+      "origine": "poignet",
+      "dimensions_m": {
+        "largeur_x": 0.1904,
+        "longueur_y": 0.4349,
+        "hauteur_z": 0.2311
+      },
+      "bornes_blender_m": {
+        "min": [
+          -0.0731,
+          -0.3012,
+          -0.1526
+        ],
+        "max": [
+          0.1172,
+          0.1337,
+          0.0785
+        ]
+      },
+      "bornes_gltf_m": {
+        "min": [
+          -0.0731,
+          -0.1526,
+          -0.1337
+        ],
+        "max": [
+          0.1172,
+          0.0785,
+          0.3012
+        ]
+      },
+      "sommets": 1300,
+      "triangles": 2480,
+      "materiaux": [
+        "Cuir_gant",
+        "Peau",
+        "Tissu_manche"
+      ],
+      "materiaux_pbr": [
+        {
+          "nom": "Cuir_gant",
+          "baseColorFactor": [
+            0.1022,
+            0.0612,
+            0.0343,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.86,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Peau",
+          "baseColorFactor": [
+            0.3231,
+            0.2232,
+            0.1384,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.84,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Tissu_manche",
+          "baseColorFactor": [
+            0.0242,
+            0.0284,
+            0.0307,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.92,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "noeuds": [
+        "Main_Droite"
+      ],
+      "maillages": [
+        "Main_Droite_mesh"
+      ],
+      "os": [],
+      "note_rig": "maillage statique (view-model) : aucun os, pose figee",
+      "prise_m": {
+        "blender": [
+          -0.043,
+          0.072,
+          0.05
+        ],
+        "gltf": [
+          -0.043,
+          0.05,
+          -0.072
+        ]
+      },
+      "usage": "a attacher seul sur une arme (origine au poignet)"
+    },
+    {
+      "id": "main_gauche",
+      "nom": "Main gauche (miroir de la main droite)",
+      "type": "bras",
+      "fichier": "export/SM_Main_Gauche.glb",
+      "octets": 87568,
+      "sha256": "383096d0a76bff77cdf50a5f3c92fa0044171f0e0cd6008166d4824adc01759d",
+      "origine": "poignet",
+      "dimensions_m": {
+        "largeur_x": 0.1904,
+        "longueur_y": 0.4349,
+        "hauteur_z": 0.2311
+      },
+      "bornes_blender_m": {
+        "min": [
+          -0.1172,
+          -0.3012,
+          -0.1526
+        ],
+        "max": [
+          0.0731,
+          0.1337,
+          0.0785
+        ]
+      },
+      "bornes_gltf_m": {
+        "min": [
+          -0.1172,
+          -0.1526,
+          -0.1337
+        ],
+        "max": [
+          0.0731,
+          0.0785,
+          0.3012
+        ]
+      },
+      "sommets": 1300,
+      "triangles": 2480,
+      "materiaux": [
+        "Cuir_gant",
+        "Peau",
+        "Tissu_manche"
+      ],
+      "materiaux_pbr": [
+        {
+          "nom": "Cuir_gant",
+          "baseColorFactor": [
+            0.1022,
+            0.0612,
+            0.0343,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.86,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Peau",
+          "baseColorFactor": [
+            0.3231,
+            0.2232,
+            0.1384,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.84,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "nom": "Tissu_manche",
+          "baseColorFactor": [
+            0.0242,
+            0.0284,
+            0.0307,
+            1
+          ],
+          "metallicFactor": 0,
+          "roughnessFactor": 0.92,
+          "doubleSided": false,
+          "emissif": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "noeuds": [
+        "Main_Gauche"
+      ],
+      "maillages": [
+        "Main_Gauche_mesh.001"
+      ],
+      "os": [],
+      "note_rig": "maillage statique (view-model) : aucun os, pose figee",
+      "prise_m": {
+        "blender": [
+          0.043,
+          0.072,
+          0.05
+        ],
+        "gltf": [
+          0.043,
+          0.05,
+          -0.072
+        ]
+      },
+      "usage": "a attacher seul sur une arme (origine au poignet)"
+    }
+  ],
+  "rendus": [
+    "renders/perso_bras_fps.png",
+    "renders/perso_carabine.png",
+    "renders/perso_fusil_assaut.png",
+    "renders/perso_fusil_pompe.png",
+    "renders/perso_lance_grenades.png",
+    "renders/perso_main_droite.png",
+    "renders/perso_main_gauche.png",
+    "renders/perso_pack_ensemble.png",
+    "renders/perso_pistolet.png",
+    "renders/perso_pm.png",
+    "renders/perso_prise_fusil.png",
+    "renders/perso_prise_pistolet.png",
+    "renders/perso_revolver.png",
+    "renders/tech_carabine.png",
+    "renders/tech_fusil_assaut.png",
+    "renders/tech_fusil_pompe.png",
+    "renders/tech_lance_grenades.png",
+    "renders/tech_pistolet.png",
+    "renders/tech_pm.png",
+    "renders/tech_revolver.png"
+  ],
+  "totaux": {
+    "armes": 7,
+    "bras": 3,
+    "triangles": 27684,
+    "octets": 1102708
+  }
+}

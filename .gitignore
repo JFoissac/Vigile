@@ -1,0 +1,23 @@
+# système / éditeurs
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# journaux
+*.log
+
+# données locales de jeu (jamais publiées)
+telemetry/
+tools/reports/
+
+# musique : copies personnelles, non distribuées
+assets/music/
+
+# captures de revue regénérées localement
+docs/renders/
+
+# secrets et environnement
+.env
+.env.*

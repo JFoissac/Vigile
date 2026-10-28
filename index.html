@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIGILE — Tenir jusqu'à l'aube</title>
+<meta name="description" content="Vigile : shooter de survie en vue subjective. Une chapelle romane, huit heures de nuit, des morts qui montent. Tenez jusqu'à l'aube.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2305090b'/%3E%3Cpath d='M16 5 L23 27 M9 27 L16 5 M5 19 L27 19' stroke='%23c8a86a' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./src/ui/style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js" } }
+</script>
+</head>
+<body>
+<canvas id="view" aria-label="Vue du jeu Vigile"></canvas>
+<div class="screen-fx" id="vignette" aria-hidden="true"></div>
+<div class="screen-fx" id="grain" aria-hidden="true"></div>
+<div class="screen-fx" id="bleed" aria-hidden="true"></div>
+
+<main id="app">
+  <button class="sound-toggle" id="btn-sound" aria-pressed="false" aria-label="Activer le son" title="Son coupé — M pour activer">
+    <svg class="st-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path class="st-body" d="M3.6 9.4h3.1L11.4 5.2v13.6L6.7 14.6H3.6z"/>
+      <path class="st-wave" d="M14.9 9.2a4.2 4.2 0 0 1 0 5.6"/>
+      <path class="st-wave2" d="M17.6 6.7a7.9 7.9 0 0 1 0 10.6"/>
+      <path class="st-slash" d="M4.4 19.6 19.6 4.4"/>
+    </svg>
+    <span class="st-txt" id="sound-label">Son coupé</span>
+  </button>
+
+  <!-- ══════════════════════════ MENU ══════════════════════════ -->
+  <section id="menu" class="screen">
+    <div class="menu-shade" aria-hidden="true"></div>
+    <div class="menu-left">
+      <p class="overline" id="menu-overline">Chapelle Saint-Ours <span class="dot">·</span> Nuit du 2 novembre</p>
+      <h1 class="title">VIGILE</h1>
+      <div class="title-rule"><i></i><span>Tenir jusqu'à l'aube</span></div>
+      <p class="lede">La nuit tombe à vingt-deux heures. Les morts montent par la lande.
+        Dans la nef, quelque chose attend d'être réveillé.</p>
+      <div class="menu-levels" role="group" aria-labelledby="lvl-k">
+        <p class="menu-levels-k" id="lvl-k">Terrain</p>
+        <div class="lvl-row">
+          <button class="lvl is-on" data-level="chapelle" type="button">
+            <b>Chapelle</b><span>La nef, le cimetière, la lande</span>
+          </button>
+          <button class="lvl" data-level="village" type="button">
+            <b>Village</b><span>La place et six habitants</span>
+          </button>
+        </div>
+        <p class="lvl-desc" id="lvl-desc">Les morts montent par les tombes, un à un.</p>
+      </div>
+      <nav class="menu-nav" aria-label="Menu principal">
+        <button class="btn btn-primary" id="btn-start"><span class="btn-ico play" aria-hidden="true">▶</span>Commencer la veille<span class="btn-key">Entrée</span></button>
+        <button class="btn" id="btn-settings"><span class="btn-ico" aria-hidden="true"></span>Réglages</button>
+        <button class="btn" id="btn-controls"><span class="btn-ico" aria-hidden="true"></span>Commandes</button>
+        <button class="btn" id="btn-achievements"><span class="btn-ico" aria-hidden="true"></span>Succès<span class="btn-key" id="succes-badge">0/18</span></button>
+      </nav>
+      <p class="menu-foot">Vue subjective <span class="dot">·</span> Clavier et souris <span class="dot">·</span> Casque conseillé</p>
+    </div>
+
+    <aside class="menu-meta" aria-label="Informations">
+      <div class="meta-clock">
+        <span class="meta-k">Veille</span>
+        <strong>22:00</strong><i></i><strong>06:00</strong>
+      </div>
+      <p class="meta-note">Huit heures. Douze assauts.<br>Un office pour les morts.</p>
+      <div class="meta-rule"></div>
+      <p class="meta-small">« Veillez donc, puisque vous ne savez ni le jour ni l'heure. »</p>
+    </aside>
+
+    <!-- Réglages -->
+    <section class="panel" id="settings-panel" hidden aria-label="Réglages">
+      <header class="panel-head">
+        <h2>Réglages</h2>
+        <button class="iconbtn" data-close="settings-panel" aria-label="Fermer">✕</button>
+      </header>
+      <div id="settings-rows" class="rows"></div>
+      <footer class="panel-foot">
+        <button class="btn btn-small" id="btn-settings-defaults">Valeurs par défaut</button>
+        <span class="panel-hint">Appliqué immédiatement</span>
+      </footer>
+    </section>
+
+    <!-- Commandes -->
+    <section class="panel" id="controls-panel" hidden aria-label="Commandes">
+      <header class="panel-head">
+        <h2>Commandes</h2>
+        <button class="iconbtn" data-close="controls-panel" aria-label="Fermer">✕</button>
+      </header>
+      <dl class="controls">
+        <div><dt><kbd>Z</kbd><kbd>A</kbd><kbd>S</kbd><kbd>E</kbd></dt><dd>Marcher (ZASE)</dd></div>
+        <div><dt><kbd>Maj</kbd></dt><dd>Sprint (endurance)</dd></div>
+        <div><dt><kbd>Espace</kbd></dt><dd>Sauter</dd></div>
+        <div><dt><kbd>Clic gauche</kbd></dt><dd>Tirer</dd></div>
+        <div><dt><kbd>Clic droit</kbd></dt><dd>Utiliser l'objet actif ; à défaut une fiole si blessé, sinon viser (lunette)</dd></div>
+        <div><dt><kbd>Molette</kbd></dt><dd>Changer d'arme</dd></div>
+        <div><dt><kbd>1</kbd>…<kbd>8</kbd></dt><dd>Raccourcis d'arme</dd></div>
+        <div><dt><kbd>R</kbd></dt><dd>Recharger (munitions par calibre)</dd></div>
+        <div><dt><kbd>I</kbd></dt><dd>Inventaire (met la veille en pause)</dd></div>
+        <div><dt><kbd>⚿</kbd></dt><dd>Caisses et coffres s'ouvrent <b>en passant dessus</b> (E = droite du ZASE)</dd></div>
+        <div><dt><kbd>⚿</kbd></dt><dd>Clé de la sacristie : ouvre les coffres verrouillés — les morts, caisses et coffres en lâchent</dd></div>
+        <div><dt><kbd>†</kbd></dt><dd>Briser une tombe : butin rare, ou un hôte de moins à la vague suivante</dd></div>
+        <div><dt><kbd>H</kbd><kbd>L</kbd><kbd>G</kbd></dt><dd>Raccourcis : trousse, lanterne, fiole</dd></div>
+        <div><dt><kbd>F</kbd></dt><dd>Éteindre / rallumer la lanterne</dd></div>
+        <div><dt><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd></dt><dd>Choisir une bénédiction (fin de vague)</dd></div>
+        <div><dt><kbd>Échap</kbd></dt><dd>Pause</dd></div>
+        <div><dt><kbd>M</kbd></dt><dd>Activer / couper le son</dd></div>
+      </dl>
+      <p class="panel-hint">Le butin au sol se ramasse <b>en marchant dessus</b>. On commence avec le pistolet et la hachette : les autres armes <b>se ramassent</b> sur les morts, dans les caisses et les coffres — les meilleures tombent en fin de veille, et l'Officiant en lâche une. Chaque arme a ses dégâts et son taux d'abattage à la tête.</p>
+    </section>
+
+    <!-- Succès -->
+    <section class="panel panel-wide" id="succes-panel" hidden aria-label="Succès">
+      <header class="panel-head">
+        <h2>Succès</h2>
+        <span class="panel-sub" id="succes-count">0 / 18</span>
+        <button class="iconbtn" data-close="succes-panel" aria-label="Fermer">✕</button>
+      </header>
+      <ul class="succes-list" id="succes-list"></ul>
+      <footer class="panel-foot">
+        <span class="panel-hint">Débloqués d'une veille à l'autre, conservés sur cet appareil.</span>
+      </footer>
+    </section>
+
+    <div class="lock-hint" id="lock-hint" hidden>Cliquez pour capturer la souris</div>
+  </section>
+
+  <!-- ══════════════════════════ HUD ══════════════════════════ -->
+  <section id="hud" hidden aria-label="Interface de jeu">
+    <div class="hud-top">
+      <div class="hud-wave">
+        <span class="k">Vague</span>
+        <span class="v" id="wave-num">I</span>
+        <span class="s" id="wave-left">5 hôtes</span>
+        <span class="s cit" id="cit-count">6 citoyens</span>
+      </div>
+      <div class="hud-clock">
+        <div class="clock-time" id="clock">22:00</div>
+        <div class="clock-track"><i id="clock-fill"></i><b id="clock-dawn"></b></div>
+        <div class="clock-phase" id="phase">Vêpres</div>
+      </div>
+      <div class="hud-objective">
+        <span class="s" id="objective">Tenir jusqu'à l'aube</span>
+      </div>
+    </div>
+
+    <div id="bossbar" hidden>
+      <div class="boss-head"><span class="boss-name" id="boss-name">L'Officiant</span><span class="boss-hp" id="boss-hp">2400 / 2400</span><span class="boss-phase" id="boss-phase">Phase I</span></div>
+      <div class="boss-hint">visez la rune de la poitrine ou la tête</div>
+      <div class="boss-track"><i id="boss-fill"></i></div>
+    </div>
+
+    <!-- radar : où sont les morts (les points sont dans un rayon de 34 m,
+         les lointains restent collés au bord) -->
+    <div id="radar" aria-label="Radar des morts">
+      <div class="radar-dial">
+        <i class="radar-axis ax-v"></i><i class="radar-axis ax-h"></i>
+        <i class="radar-ring r1"></i><i class="radar-ring r2"></i>
+        <div class="radar-sweep"></div>
+        <div class="radar-blips" id="radar-blips"></div>
+        <b class="radar-self"></b>
+        <span class="radar-north" id="radar-north">N</span>
+      </div>
+      <div class="radar-foot">
+        <b id="radar-count">0</b><em>à portée</em>
+        <span id="radar-total" hidden></span>
+      </div>
+      <ul class="radar-legend" aria-hidden="true">
+        <li><i class="lg walker"></i>marcheur</li>
+        <li><i class="lg runner"></i>coureur</li>
+        <li><i class="lg brute"></i>colosse</li>
+        <li><i class="lg zealot"></i>zélateur</li>
+      </ul>
+    </div>
+
+    <div id="announce" aria-live="polite">
+      <div class="ann-kicker" id="ann-kicker"></div>
+      <div class="ann-title" id="ann-title"></div>
+    </div>
+
+    <div class="hud-bottom">
+      <div class="hud-vitals">
+        <div class="vital-head"><span class="k">Vigile</span><span class="vital-num"><b id="hp-num">100</b><i>/</i><span id="hp-max">100</span></span></div>
+        <div class="vital-body">
+          <i class="vital-cross" aria-hidden="true"></i>
+          <div class="vital-bars">
+            <div class="bar hp"><i id="hp-fill"></i><span class="ticks" aria-hidden="true"></span></div>
+            <div class="bar stam"><i id="stam-fill"></i></div>
+          </div>
+        </div>
+        <div class="flask" id="flask" hidden><i></i><span id="flask-num">1</span></div>
+      </div>
+      <div class="hud-ammo" id="hud-ammo">
+        <div class="weapon-slots" id="weapon-slots" aria-label="Arsenal"></div>
+        <div class="ammo-main"><span id="ammo">12</span><span class="ammo-sep">/</span><span id="ammo-res">72</span></div>
+        <div class="ammo-sub">
+          <span class="ammo-pips" id="ammo-pips" aria-hidden="true"></span>
+          <span class="ammo-mags"><b id="ammo-mags">6</b><span id="ammo-mags-label">chargeurs</span></span>
+        </div>
+        <div class="ammo-weapon"><span id="weapon">Pistolet Mle 1935</span><em id="ammo-type">9 mm</em></div>
+        <div class="ammo-active" id="active-item" hidden><b>Objet</b><span id="active-name">—</span><em>clic droit</em></div>
+        <div class="ammo-reload" id="reload">Rechargement</div>
+      </div>
+
+      <div class="hud-inventory" id="hud-inventory" aria-label="Inventaire">
+        <span class="inv-k">Inventaire</span>
+        <span class="inv-ammo" data-ammo="9mm"><b id="inv-9mm">72</b><em>9 mm</em></span>
+        <span class="inv-ammo" data-ammo="12"><b id="inv-12">24</b><em>12</em></span>
+        <span class="inv-ammo" data-ammo="5.56"><b id="inv-556">90</b><em>5,56</em></span>
+        <span class="inv-ammo" data-ammo=".308"><b id="inv-308">15</b><em>.308</em></span>
+        <span class="inv-ammo" data-ammo="40mm"><b id="inv-40mm">6</b><em>40 mm</em></span>
+        <span class="inv-item" title="Trousse de soin (H)"><b id="inv-medkits">0</b><em>trousses</em></span>
+        <span class="inv-item" title="Clés de la sacristie"><b id="inv-keys">0</b><em>clés</em></span>
+        <span class="inv-item" title="Lanternes à huile (L)"><b id="inv-lanterns">0</b><em>lanternes</em></span>
+      </div>
+
+      <div id="loot-prompt" hidden><b id="loot-key" hidden></b><span id="loot-text"></span></div>
+    </div>
+
+    <div id="scope" hidden aria-hidden="true">
+      <div class="scope-mask"></div>
+      <div class="scope-tube"></div>
+      <i class="scope-h"></i><i class="scope-v"></i>
+      <b class="scope-dot"></b>
+      <span class="scope-zoom">× 2,5</span>
+    </div>
+
+    <div id="crosshair" aria-hidden="true">
+      <i class="t t-up"></i><i class="t t-down"></i><i class="t t-left"></i><i class="t t-right"></i><b></b>
+    </div>
+    <!-- flèche de direction vers le mort le plus proche (bord d'écran) -->
+    <div id="threat-arrow" hidden aria-hidden="true"><i></i></div>
+    <!-- munitions juste sous le réticule, pour ne plus quitter l'action des yeux -->
+    <div id="ammo-alert" hidden><b id="ammo-alert-n">0</b><em id="ammo-alert-t">chargeur vide · R</em></div>
+    <div id="hitmarker" aria-hidden="true"><i></i><i></i></div>
+    <div id="dmg-dir" aria-hidden="true"></div>
+    <div id="toast" aria-live="polite"></div>
+    <div id="loot-popup" hidden aria-live="polite">
+      <div class="lp-head"><span class="lp-kicker">Butin</span><b id="lp-title"></b></div>
+      <ul id="lp-items"></ul>
+    </div>
+    <div id="succes-toast" aria-live="polite">
+      <span class="st-ico" aria-hidden="true">✦</span>
+      <div class="st-body"><span class="st-k">Succès débloqué</span><b id="st-name"></b><span class="st-desc" id="st-desc"></span></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ BÉNÉDICTION ══════════════════════════ -->
+  <section id="blessings" class="screen overlay" hidden aria-label="Bénédiction">
+    <div class="blessing-wrap">
+      <p class="overline">Vague nettoyée <span class="dot">·</span> la nuit accorde une faveur</p>
+      <h2 class="blessing-title">Choisissez une faveur</h2>
+      <div class="blessing-cards" id="blessing-cards"></div>
+      <p class="blessing-hint">Touches <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> — ou cliquez une carte</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ INVENTAIRE ══════════════════════════ -->
+  <section id="inventory" class="screen overlay" hidden aria-label="Inventaire">
+    <div class="panel panel-inv">
+      <header class="panel-head">
+        <h2>Inventaire</h2>
+        <span class="panel-sub" id="inv-clock">22:00</span>
+        <button class="iconbtn" data-close="inventory" aria-label="Fermer">✕</button>
+      </header>
+      <p class="inv-lede">L'objet actif s'utilise <b>au clic droit</b> en jeu.</p>
+      <ul class="inv-list" id="inv-list"></ul>
+      <div class="inv-arsenal">
+        <span class="inv-k">Armes disponibles</span>
+        <ul id="inv-weapons"></ul>
+        <p class="inv-note" id="inv-weapons-note"></p>
+      </div>
+      <footer class="panel-foot">
+        <span class="panel-hint">↑ ↓ puis Entrée, ou clic · <kbd>I</kbd> referme · molette : changer d'arme</span>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ PAUSE ══════════════════════════ -->
+  <section id="pause" class="screen overlay" hidden aria-label="Pause">
+    <div class="panel panel-pause">
+      <header class="panel-head">
+        <h2>Pause</h2>
+        <span class="panel-sub" id="pause-clock">22:00</span>
+      </header>
+      <div class="pause-objectives" id="pause-objectives" aria-label="Objectifs"></div>
+      <div id="pause-settings" class="rows"></div>
+      <nav class="pause-nav">
+        <button class="btn btn-primary" id="btn-resume"><span class="btn-ico play" aria-hidden="true">▶</span>Reprendre la veille</button>
+        <button class="btn" id="btn-quit"><span class="btn-ico stop" aria-hidden="true">■</span>Quitter vers le menu</button>
+      </nav>
+      <footer class="panel-foot">
+        <span class="panel-hint">La nuit est en suspens.</span>
+        <button class="btn btn-small" id="btn-pause-defaults">Réinitialiser</button>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ FIN ══════════════════════════ -->
+  <section id="end" class="screen overlay" hidden aria-label="Fin de partie">
+    <div class="end-wrap">
+      <p class="overline" id="end-overline">06:00 · L'aube</p>
+      <h2 class="end-verdict" id="end-verdict">L'AUBE</h2>
+      <p class="end-line" id="end-line">Les cloches sonnent pour un vivant.</p>
+      <div class="end-stats" id="end-stats"></div>
+      <div class="end-actions">
+        <button class="btn btn-primary" id="btn-again"><span class="btn-ico play" aria-hidden="true">▶</span>Veiller encore</button>
+        <button class="btn" id="btn-menu"><span class="btn-ico stop" aria-hidden="true">■</span>Retour au menu</button>
+      </div>
+      <p class="end-quote" id="end-quote">« Veillez donc, puisque vous ne savez ni le jour ni l'heure. »</p>
+    </div>
+  </section>
+
+  <div id="loading" class="screen">
+    <div class="load-inner">
+      <span class="load-mark">V</span>
+      <div class="load-track"><i id="load-fill"></i></div>
+      <p id="load-label">La nuit se lève…</p>
+    </div>
+  </div>
+
+  <div id="fade" aria-hidden="true"></div>
+</main>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

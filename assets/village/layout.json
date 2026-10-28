@@ -1,0 +1,2107 @@
+{
+  "projet": "Vigile - village medieval (place centrale)",
+  "version": 1,
+  "genere_le": "2026-10-22T21:34:58",
+  "unites": "metres",
+  "repere_blender": "X = est, Y = nord, Z = haut. Origine du village = centre de la place.",
+  "repere_gltf": "Y = haut. Conversion depuis Blender : (x, y, z) -> (x, z, -y).",
+  "rotation_gltf": "rotation_y_gltf_deg = rotation_z_deg (meme signe, verifie sur un cas).",
+  "origine_modules": "pied au sol (z=0) pour tous les modules sauf V_Enseigne, dont l'origine est le point d'ancrage mural (z donne la hauteur) ; V_Place_Pavee / V_Rue_Pavee / V_Ruelle / V_Terre ont leur SURFACE de marche en z=0.",
+  "modules": [
+    {
+      "id": "V_Place_Pavee",
+      "position": [
+        0,
+        0,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "sol",
+      "note": "Place centrale 14 x 14 m, surface de marche a z=0.",
+      "position_gltf": [
+        0,
+        0.0,
+        0
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 14.4,
+        "profondeur_y": 14.4,
+        "hauteur_z": 0.3
+      },
+      "fichier": "export/V_Place_Pavee.glb",
+      "triangles": 3060,
+      "bornes_locales": {
+        "min": [
+          -7.2,
+          -7.2,
+          -0.2
+        ],
+        "max": [
+          7.2,
+          7.2,
+          0.06
+        ]
+      }
+    },
+    {
+      "id": "V_Rue_Pavee",
+      "position": [
+        0,
+        -11.0,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "ruelle",
+      "note": "Rue principale, entree sud du bourg.",
+      "position_gltf": [
+        0,
+        0.0,
+        11.0
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 3.75,
+        "profondeur_y": 8.1,
+        "hauteur_z": 0.25
+      },
+      "fichier": "export/V_Rue_Pavee.glb",
+      "triangles": 588,
+      "bornes_locales": {
+        "min": [
+          -2.01,
+          -4.05,
+          -0.2
+        ],
+        "max": [
+          2.01,
+          4.05,
+          0.03
+        ]
+      }
+    },
+    {
+      "id": "V_Ruelle",
+      "position": [
+        1.0,
+        11.2,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "ruelle",
+      "note": "Ruelle nord entre la maison A et la maisonnette.",
+      "position_gltf": [
+        1.0,
+        0.0,
+        -11.2
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 2.75,
+        "profondeur_y": 8.1,
+        "hauteur_z": 0.25
+      },
+      "fichier": "export/V_Ruelle.glb",
+      "triangles": 636,
+      "bornes_locales": {
+        "min": [
+          -1.61,
+          -4.05,
+          -0.2
+        ],
+        "max": [
+          1.61,
+          4.05,
+          0.03
+        ]
+      }
+    },
+    {
+      "id": "V_Ruelle",
+      "position": [
+        10.9,
+        0.0,
+        0.0
+      ],
+      "rotation_z_deg": 90,
+      "echelle": 1.0,
+      "groupe": "ruelle",
+      "note": "Ruelle est entre la maison de pierre et la grange.",
+      "position_gltf": [
+        10.9,
+        0.0,
+        -0.0
+      ],
+      "rotation_y_gltf_deg": 90,
+      "emprise_m": {
+        "largeur_x": 2.75,
+        "profondeur_y": 8.1,
+        "hauteur_z": 0.25
+      },
+      "fichier": "export/V_Ruelle.glb",
+      "triangles": 636,
+      "bornes_locales": {
+        "min": [
+          -1.61,
+          -4.05,
+          -0.2
+        ],
+        "max": [
+          1.61,
+          4.05,
+          0.03
+        ]
+      }
+    },
+    {
+      "id": "V_Maison_A",
+      "position": [
+        -3.9,
+        11.2,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "maisons",
+      "note": "facade vers la place (nord)",
+      "collision": {
+        "type": "box",
+        "taille": [
+          6.7,
+          5.45,
+          9.0
+        ],
+        "centre": [
+          0,
+          0,
+          4.5
+        ]
+      },
+      "position_gltf": [
+        -3.9,
+        0.0,
+        -11.2
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 6.7,
+        "profondeur_y": 5.45,
+        "hauteur_z": 9.0
+      },
+      "fichier": "export/V_Maison_A.glb",
+      "triangles": 15632,
+      "bornes_locales": {
+        "min": [
+          -4.0015,
+          -3.6446,
+          0.0
+        ],
+        "max": [
+          4.0015,
+          3.0075,
+          9.815
+        ]
+      }
+    },
+    {
+      "id": "V_Maison_C",
+      "position": [
+        4.6,
+        12.6,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "maisons",
+      "note": "facade vers la place (nord)",
+      "collision": {
+        "type": "box",
+        "taille": [
+          5.0,
+          4.65,
+          6.4
+        ],
+        "centre": [
+          0,
+          0,
+          3.2
+        ]
+      },
+      "position_gltf": [
+        4.6,
+        0.0,
+        -12.6
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 5.0,
+        "profondeur_y": 4.65,
+        "hauteur_z": 6.4
+      },
+      "fichier": "export/V_Maison_C.glb",
+      "triangles": 10264,
+      "bornes_locales": {
+        "min": [
+          -3.1015,
+          -4.1521,
+          0.0
+        ],
+        "max": [
+          3.1015,
+          2.6075,
+          6.66
+        ]
+      }
+    },
+    {
+      "id": "V_Maison_B",
+      "position": [
+        10.6,
+        -4.6,
+        0.0
+      ],
+      "rotation_z_deg": -90,
+      "echelle": 1.0,
+      "groupe": "maisons",
+      "note": "facade vers la place (est)",
+      "collision": {
+        "type": "box",
+        "taille": [
+          6.4,
+          5.45,
+          9.0
+        ],
+        "centre": [
+          0,
+          0,
+          4.5
+        ]
+      },
+      "position_gltf": [
+        10.6,
+        0.0,
+        4.6
+      ],
+      "rotation_y_gltf_deg": -90,
+      "emprise_m": {
+        "largeur_x": 6.4,
+        "profondeur_y": 5.45,
+        "hauteur_z": 9.0
+      },
+      "fichier": "export/V_Maison_B.glb",
+      "triangles": 15028,
+      "bornes_locales": {
+        "min": [
+          -3.5075,
+          -3.8546,
+          0.0
+        ],
+        "max": [
+          3.5075,
+          3.3015,
+          9.15
+        ]
+      }
+    },
+    {
+      "id": "V_Grange",
+      "position": [
+        10.9,
+        5.0,
+        0.0
+      ],
+      "rotation_z_deg": -90,
+      "echelle": 1.0,
+      "groupe": "maisons",
+      "note": "facade vers la place (est)",
+      "collision": {
+        "type": "box",
+        "taille": [
+          7.25,
+          5.25,
+          6.5
+        ],
+        "centre": [
+          0,
+          0,
+          3.25
+        ]
+      },
+      "position_gltf": [
+        10.9,
+        0.0,
+        -5.0
+      ],
+      "rotation_y_gltf_deg": -90,
+      "emprise_m": {
+        "largeur_x": 7.25,
+        "profondeur_y": 5.25,
+        "hauteur_z": 6.5
+      },
+      "fichier": "export/V_Grange.glb",
+      "triangles": 5800,
+      "bornes_locales": {
+        "min": [
+          -4.0505,
+          -3.8904,
+          0.0
+        ],
+        "max": [
+          4.0505,
+          3.07,
+          6.4717
+        ]
+      }
+    },
+    {
+      "id": "V_Maison_D",
+      "position": [
+        -10.9,
+        -2.6,
+        0.0
+      ],
+      "rotation_z_deg": 90,
+      "echelle": 1.0,
+      "groupe": "maisons",
+      "note": "facade vers la place (ouest)",
+      "collision": {
+        "type": "box",
+        "taille": [
+          9.2,
+          5.65,
+          9.0
+        ],
+        "centre": [
+          0,
+          0,
+          4.5
+        ]
+      },
+      "position_gltf": [
+        -10.9,
+        0.0,
+        2.6
+      ],
+      "rotation_y_gltf_deg": 90,
+      "emprise_m": {
+        "largeur_x": 9.2,
+        "profondeur_y": 5.65,
+        "hauteur_z": 9.0
+      },
+      "fichier": "export/V_Maison_D.glb",
+      "triangles": 18536,
+      "bornes_locales": {
+        "min": [
+          -4.9075,
+          -3.9859,
+          0.0
+        ],
+        "max": [
+          4.9075,
+          3.4015,
+          9.245
+        ]
+      }
+    },
+    {
+      "id": "V_Maison_E",
+      "position": [
+        -12.2,
+        6.4,
+        0.0
+      ],
+      "rotation_z_deg": 90,
+      "echelle": 1.0,
+      "groupe": "maisons",
+      "note": "facade vers la place (ouest)",
+      "collision": {
+        "type": "box",
+        "taille": [
+          7.0,
+          5.45,
+          9.0
+        ],
+        "centre": [
+          0,
+          0,
+          4.5
+        ]
+      },
+      "position_gltf": [
+        -12.2,
+        0.0,
+        -6.4
+      ],
+      "rotation_y_gltf_deg": 90,
+      "emprise_m": {
+        "largeur_x": 7.0,
+        "profondeur_y": 5.45,
+        "hauteur_z": 9.0
+      },
+      "fichier": "export/V_Maison_E.glb",
+      "triangles": 15852,
+      "bornes_locales": {
+        "min": [
+          -3.9015,
+          -3.7942,
+          0.0
+        ],
+        "max": [
+          3.9015,
+          2.9075,
+          9.72
+        ]
+      }
+    },
+    {
+      "id": "V_Enseigne",
+      "position": [
+        -8.02,
+        1.35,
+        3.85
+      ],
+      "rotation_z_deg": -90,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "Potence ancree dans la facade est de l'auberge, panneau vers la place.",
+      "etiquette": false,
+      "position_gltf": [
+        -8.02,
+        3.85,
+        -1.35
+      ],
+      "rotation_y_gltf_deg": -90,
+      "emprise_m": {
+        "largeur_x": 1.5,
+        "profondeur_y": 1.7,
+        "hauteur_z": 1.5
+      },
+      "fichier": "export/V_Enseigne.glb",
+      "triangles": 4678,
+      "bornes_locales": {
+        "min": [
+          -0.73,
+          -0.07,
+          -0.84
+        ],
+        "max": [
+          0.73,
+          1.575,
+          0.575
+        ]
+      }
+    },
+    {
+      "id": "V_Puits",
+      "position": [
+        -1.9,
+        0.6,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "place",
+      "note": "Puits central, point d'eau a defendre.",
+      "point_interet": "puits",
+      "collision": {
+        "type": "box",
+        "taille": [
+          2.3,
+          2.3,
+          1.0
+        ],
+        "centre": [
+          0,
+          0,
+          0.5
+        ]
+      },
+      "position_gltf": [
+        -1.9,
+        0.0,
+        -0.6
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 2.45,
+        "profondeur_y": 2.25,
+        "hauteur_z": 3.2
+      },
+      "fichier": "export/V_Puits.glb",
+      "triangles": 1728,
+      "bornes_locales": {
+        "min": [
+          -1.67,
+          -1.1,
+          0.0
+        ],
+        "max": [
+          1.67,
+          1.1,
+          3.15
+        ]
+      }
+    },
+    {
+      "id": "V_Halles",
+      "position": [
+        2.7,
+        5.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "place",
+      "note": "Halles du marche, ouvertes sur la place.",
+      "point_interet": "halles",
+      "collision": {
+        "type": "box",
+        "taille": [
+          7.4,
+          4.4,
+          3.2
+        ],
+        "centre": [
+          0,
+          0,
+          1.6
+        ]
+      },
+      "position_gltf": [
+        2.7,
+        0.0,
+        -5.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 7.8,
+        "profondeur_y": 4.8,
+        "hauteur_z": 4.7
+      },
+      "fichier": "export/V_Halles.glb",
+      "triangles": 3276,
+      "bornes_locales": {
+        "min": [
+          -4.1756,
+          -3.3826,
+          0.0
+        ],
+        "max": [
+          4.1756,
+          2.57,
+          4.6966
+        ]
+      }
+    },
+    {
+      "id": "V_Etal",
+      "position": [
+        1.4,
+        0.8,
+        0.0
+      ],
+      "rotation_z_deg": -8,
+      "echelle": 1.0,
+      "groupe": "place",
+      "note": "Etal de boulanger devant les halles.",
+      "position_gltf": [
+        1.4,
+        0.0,
+        -0.8
+      ],
+      "rotation_y_gltf_deg": -8,
+      "emprise_m": {
+        "largeur_x": 2.75,
+        "profondeur_y": 1.6,
+        "hauteur_z": 2.45
+      },
+      "fichier": "export/V_Etal.glb",
+      "triangles": 844,
+      "bornes_locales": {
+        "min": [
+          -1.35,
+          -1.005,
+          0.0
+        ],
+        "max": [
+          1.35,
+          0.65,
+          2.4426
+        ]
+      }
+    },
+    {
+      "id": "V_Etal",
+      "position": [
+        5.6,
+        -0.4,
+        0.0
+      ],
+      "rotation_z_deg": 90,
+      "echelle": 1.0,
+      "groupe": "place",
+      "note": "Etal de primeurs a l'entree de la ruelle est.",
+      "position_gltf": [
+        5.6,
+        0.0,
+        0.4
+      ],
+      "rotation_y_gltf_deg": 90,
+      "emprise_m": {
+        "largeur_x": 2.75,
+        "profondeur_y": 1.6,
+        "hauteur_z": 2.45
+      },
+      "fichier": "export/V_Etal.glb",
+      "triangles": 844,
+      "bornes_locales": {
+        "min": [
+          -1.35,
+          -1.005,
+          0.0
+        ],
+        "max": [
+          1.35,
+          0.65,
+          2.4426
+        ]
+      }
+    },
+    {
+      "id": "V_Charrette",
+      "position": [
+        -4.8,
+        -3.4,
+        0.0
+      ],
+      "rotation_z_deg": 22,
+      "echelle": 1.0,
+      "groupe": "place",
+      "note": "Charrette dechargee, masque de combat.",
+      "position_gltf": [
+        -4.8,
+        0.0,
+        3.4
+      ],
+      "rotation_y_gltf_deg": 22,
+      "emprise_m": {
+        "largeur_x": 3.95,
+        "profondeur_y": 1.65,
+        "hauteur_z": 1.3
+      },
+      "fichier": "export/V_Charrette.glb",
+      "triangles": 3040,
+      "bornes_locales": {
+        "min": [
+          -1.275,
+          -0.795,
+          0.0
+        ],
+        "max": [
+          2.6309,
+          0.795,
+          1.2674
+        ]
+      }
+    },
+    {
+      "id": "V_Tonneau",
+      "position": [
+        -6.6,
+        4.6,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "tonneaux d'eau pres du puits",
+      "etiquette": true,
+      "position_gltf": [
+        -6.6,
+        0.0,
+        -4.6
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.72,
+        "profondeur_y": 0.72,
+        "hauteur_z": 0.92
+      },
+      "fichier": "export/V_Tonneau.glb",
+      "triangles": 348,
+      "bornes_locales": {
+        "min": [
+          -0.34,
+          -0.34,
+          0.0
+        ],
+        "max": [
+          0.34,
+          0.34,
+          0.9
+        ]
+      }
+    },
+    {
+      "id": "V_Tonneau",
+      "position": [
+        -5.2,
+        5.7,
+        0.0
+      ],
+      "rotation_z_deg": 38,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "tonneau de reserve",
+      "etiquette": true,
+      "position_gltf": [
+        -5.2,
+        0.0,
+        -5.7
+      ],
+      "rotation_y_gltf_deg": 38,
+      "emprise_m": {
+        "largeur_x": 0.72,
+        "profondeur_y": 0.72,
+        "hauteur_z": 0.92
+      },
+      "fichier": "export/V_Tonneau.glb",
+      "triangles": 348,
+      "bornes_locales": {
+        "min": [
+          -0.34,
+          -0.34,
+          0.0
+        ],
+        "max": [
+          0.34,
+          0.34,
+          0.9
+        ]
+      }
+    },
+    {
+      "id": "V_Tonneau",
+      "position": [
+        2.4,
+        -6.3,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "tonneau a l'entree de la ruelle sud",
+      "etiquette": true,
+      "position_gltf": [
+        2.4,
+        0.0,
+        6.3
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.72,
+        "profondeur_y": 0.72,
+        "hauteur_z": 0.92
+      },
+      "fichier": "export/V_Tonneau.glb",
+      "triangles": 348,
+      "bornes_locales": {
+        "min": [
+          -0.34,
+          -0.34,
+          0.0
+        ],
+        "max": [
+          0.34,
+          0.34,
+          0.9
+        ]
+      }
+    },
+    {
+      "id": "V_Caisses",
+      "position": [
+        -6.3,
+        -6.0,
+        0.0
+      ],
+      "rotation_z_deg": 15,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "caisses de marchandises (couvert)",
+      "etiquette": true,
+      "position_gltf": [
+        -6.3,
+        0.0,
+        6.0
+      ],
+      "rotation_y_gltf_deg": 15,
+      "emprise_m": {
+        "largeur_x": 0.9,
+        "profondeur_y": 1.4,
+        "hauteur_z": 1.1
+      },
+      "fichier": "export/V_Caisses.glb",
+      "triangles": 608,
+      "bornes_locales": {
+        "min": [
+          -0.37,
+          -0.32,
+          0.0
+        ],
+        "max": [
+          0.4449,
+          1.0093,
+          1.058
+        ]
+      }
+    },
+    {
+      "id": "V_Reverbere",
+      "position": [
+        -6.9,
+        6.0,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "reverbere nord-ouest",
+      "etiquette": true,
+      "position_gltf": [
+        -6.9,
+        0.0,
+        -6.0
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.55,
+        "profondeur_y": 0.75,
+        "hauteur_z": 3.45
+      },
+      "fichier": "export/V_Reverbere.glb",
+      "triangles": 836,
+      "bornes_locales": {
+        "min": [
+          -0.2565,
+          -0.9115,
+          0.0
+        ],
+        "max": [
+          0.2565,
+          0.2565,
+          3.392
+        ]
+      }
+    },
+    {
+      "id": "V_Reverbere",
+      "position": [
+        6.9,
+        1.6,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "reverbere est",
+      "etiquette": true,
+      "position_gltf": [
+        6.9,
+        0.0,
+        -1.6
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.55,
+        "profondeur_y": 0.75,
+        "hauteur_z": 3.45
+      },
+      "fichier": "export/V_Reverbere.glb",
+      "triangles": 836,
+      "bornes_locales": {
+        "min": [
+          -0.2565,
+          -0.9115,
+          0.0
+        ],
+        "max": [
+          0.2565,
+          0.2565,
+          3.392
+        ]
+      }
+    },
+    {
+      "id": "V_Reverbere",
+      "position": [
+        -3.2,
+        -6.6,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "reverbere sud-ouest",
+      "etiquette": true,
+      "position_gltf": [
+        -3.2,
+        0.0,
+        6.6
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.55,
+        "profondeur_y": 0.75,
+        "hauteur_z": 3.45
+      },
+      "fichier": "export/V_Reverbere.glb",
+      "triangles": 836,
+      "bornes_locales": {
+        "min": [
+          -0.2565,
+          -0.9115,
+          0.0
+        ],
+        "max": [
+          0.2565,
+          0.2565,
+          3.392
+        ]
+      }
+    },
+    {
+      "id": "V_Reverbere",
+      "position": [
+        3.6,
+        -6.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "reverbere sud-est",
+      "etiquette": true,
+      "position_gltf": [
+        3.6,
+        0.0,
+        6.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.55,
+        "profondeur_y": 0.75,
+        "hauteur_z": 3.45
+      },
+      "fichier": "export/V_Reverbere.glb",
+      "triangles": 836,
+      "bornes_locales": {
+        "min": [
+          -0.2565,
+          -0.9115,
+          0.0
+        ],
+        "max": [
+          0.2565,
+          0.2565,
+          3.392
+        ]
+      }
+    },
+    {
+      "id": "V_Barriere",
+      "position": [
+        -3.9,
+        -13.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "barriere ouest de la porte",
+      "etiquette": false,
+      "position_gltf": [
+        -3.9,
+        0.0,
+        13.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 3.05,
+        "profondeur_y": 0.22,
+        "hauteur_z": 1.25
+      },
+      "fichier": "export/V_Barriere.glb",
+      "triangles": 308,
+      "bornes_locales": {
+        "min": [
+          -1.5215,
+          -0.0965,
+          0.0
+        ],
+        "max": [
+          1.5215,
+          0.0965,
+          1.24
+        ]
+      }
+    },
+    {
+      "id": "V_Barriere",
+      "position": [
+        -6.9,
+        -13.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "etiquette": false,
+      "position_gltf": [
+        -6.9,
+        0.0,
+        13.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 3.05,
+        "profondeur_y": 0.22,
+        "hauteur_z": 1.25
+      },
+      "fichier": "export/V_Barriere.glb",
+      "triangles": 308,
+      "bornes_locales": {
+        "min": [
+          -1.5215,
+          -0.0965,
+          0.0
+        ],
+        "max": [
+          1.5215,
+          0.0965,
+          1.24
+        ]
+      }
+    },
+    {
+      "id": "V_Barriere",
+      "position": [
+        -9.9,
+        -13.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "etiquette": false,
+      "position_gltf": [
+        -9.9,
+        0.0,
+        13.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 3.05,
+        "profondeur_y": 0.22,
+        "hauteur_z": 1.25
+      },
+      "fichier": "export/V_Barriere.glb",
+      "triangles": 308,
+      "bornes_locales": {
+        "min": [
+          -1.5215,
+          -0.0965,
+          0.0
+        ],
+        "max": [
+          1.5215,
+          0.0965,
+          1.24
+        ]
+      }
+    },
+    {
+      "id": "V_Barriere",
+      "position": [
+        3.9,
+        -13.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "barriere est de la porte",
+      "etiquette": false,
+      "position_gltf": [
+        3.9,
+        0.0,
+        13.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 3.05,
+        "profondeur_y": 0.22,
+        "hauteur_z": 1.25
+      },
+      "fichier": "export/V_Barriere.glb",
+      "triangles": 308,
+      "bornes_locales": {
+        "min": [
+          -1.5215,
+          -0.0965,
+          0.0
+        ],
+        "max": [
+          1.5215,
+          0.0965,
+          1.24
+        ]
+      }
+    },
+    {
+      "id": "V_Barriere",
+      "position": [
+        6.9,
+        -13.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "etiquette": false,
+      "position_gltf": [
+        6.9,
+        0.0,
+        13.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 3.05,
+        "profondeur_y": 0.22,
+        "hauteur_z": 1.25
+      },
+      "fichier": "export/V_Barriere.glb",
+      "triangles": 308,
+      "bornes_locales": {
+        "min": [
+          -1.5215,
+          -0.0965,
+          0.0
+        ],
+        "max": [
+          1.5215,
+          0.0965,
+          1.24
+        ]
+      }
+    },
+    {
+      "id": "V_Barriere",
+      "position": [
+        9.9,
+        -13.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "etiquette": false,
+      "position_gltf": [
+        9.9,
+        0.0,
+        13.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 3.05,
+        "profondeur_y": 0.22,
+        "hauteur_z": 1.25
+      },
+      "fichier": "export/V_Barriere.glb",
+      "triangles": 308,
+      "bornes_locales": {
+        "min": [
+          -1.5215,
+          -0.0965,
+          0.0
+        ],
+        "max": [
+          1.5215,
+          0.0965,
+          1.24
+        ]
+      }
+    },
+    {
+      "id": "V_Porte",
+      "position": [
+        0,
+        -13.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "props",
+      "note": "porte du bourg, acces sud",
+      "etiquette": true,
+      "position_gltf": [
+        0,
+        0.0,
+        13.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 4.55,
+        "profondeur_y": 1.0,
+        "hauteur_z": 3.2
+      },
+      "fichier": "export/V_Porte.glb",
+      "triangles": 880,
+      "bornes_locales": {
+        "min": [
+          -2.25,
+          -0.4144,
+          0.0
+        ],
+        "max": [
+          2.25,
+          0.5344,
+          3.155
+        ]
+      }
+    },
+    {
+      "id": "V_Arbre_Feuillu",
+      "position": [
+        -13.6,
+        15.6,
+        0.0
+      ],
+      "rotation_z_deg": 20,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "arbre de fond 1",
+      "position_gltf": [
+        -13.6,
+        0.0,
+        -15.6
+      ],
+      "rotation_y_gltf_deg": 20,
+      "emprise_m": {
+        "largeur_x": 0.85,
+        "profondeur_y": 0.85,
+        "hauteur_z": 6.1
+      },
+      "fichier": "export/V_Arbre_Feuillu.glb",
+      "triangles": 736,
+      "bornes_locales": {
+        "min": [
+          -2.1463,
+          -1.5293,
+          0.0
+        ],
+        "max": [
+          2.0549,
+          1.8748,
+          6.0445
+        ]
+      }
+    },
+    {
+      "id": "V_Arbre_Feuillu",
+      "position": [
+        15.4,
+        11.4,
+        0.0
+      ],
+      "rotation_z_deg": -35,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "arbre de fond 2",
+      "position_gltf": [
+        15.4,
+        0.0,
+        -11.4
+      ],
+      "rotation_y_gltf_deg": -35,
+      "emprise_m": {
+        "largeur_x": 0.85,
+        "profondeur_y": 0.85,
+        "hauteur_z": 6.1
+      },
+      "fichier": "export/V_Arbre_Feuillu.glb",
+      "triangles": 736,
+      "bornes_locales": {
+        "min": [
+          -2.1463,
+          -1.5293,
+          0.0
+        ],
+        "max": [
+          2.0549,
+          1.8748,
+          6.0445
+        ]
+      }
+    },
+    {
+      "id": "V_Arbre_Feuillu",
+      "position": [
+        15.2,
+        -9.6,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "arbre de fond 3",
+      "position_gltf": [
+        15.2,
+        0.0,
+        9.6
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.85,
+        "profondeur_y": 0.85,
+        "hauteur_z": 6.1
+      },
+      "fichier": "export/V_Arbre_Feuillu.glb",
+      "triangles": 736,
+      "bornes_locales": {
+        "min": [
+          -2.1463,
+          -1.5293,
+          0.0
+        ],
+        "max": [
+          2.0549,
+          1.8748,
+          6.0445
+        ]
+      }
+    },
+    {
+      "id": "V_Arbre_Feuillu",
+      "position": [
+        -15.4,
+        -9.8,
+        0.0
+      ],
+      "rotation_z_deg": 12,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "arbre de fond 4",
+      "position_gltf": [
+        -15.4,
+        0.0,
+        9.8
+      ],
+      "rotation_y_gltf_deg": 12,
+      "emprise_m": {
+        "largeur_x": 0.85,
+        "profondeur_y": 0.85,
+        "hauteur_z": 6.1
+      },
+      "fichier": "export/V_Arbre_Feuillu.glb",
+      "triangles": 736,
+      "bornes_locales": {
+        "min": [
+          -2.1463,
+          -1.5293,
+          0.0
+        ],
+        "max": [
+          2.0549,
+          1.8748,
+          6.0445
+        ]
+      }
+    },
+    {
+      "id": "V_Arbre_Feuillu",
+      "position": [
+        0.6,
+        18.6,
+        0.0
+      ],
+      "rotation_z_deg": -8,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "arbre de fond 5",
+      "position_gltf": [
+        0.6,
+        0.0,
+        -18.6
+      ],
+      "rotation_y_gltf_deg": -8,
+      "emprise_m": {
+        "largeur_x": 0.85,
+        "profondeur_y": 0.85,
+        "hauteur_z": 6.1
+      },
+      "fichier": "export/V_Arbre_Feuillu.glb",
+      "triangles": 736,
+      "bornes_locales": {
+        "min": [
+          -2.1463,
+          -1.5293,
+          0.0
+        ],
+        "max": [
+          2.0549,
+          1.8748,
+          6.0445
+        ]
+      }
+    },
+    {
+      "id": "V_Arbre_Conifere",
+      "position": [
+        -18.6,
+        0.0,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "conifere de fond 1",
+      "position_gltf": [
+        -18.6,
+        0.0,
+        -0.0
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.55,
+        "profondeur_y": 0.55,
+        "hauteur_z": 6.45
+      },
+      "fichier": "export/V_Arbre_Conifere.glb",
+      "triangles": 388,
+      "bornes_locales": {
+        "min": [
+          -1.5065,
+          -1.3935,
+          0.0
+        ],
+        "max": [
+          1.5065,
+          1.544,
+          6.4
+        ]
+      }
+    },
+    {
+      "id": "V_Arbre_Conifere",
+      "position": [
+        16.6,
+        2.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "conifere de fond 2",
+      "position_gltf": [
+        16.6,
+        0.0,
+        -2.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.55,
+        "profondeur_y": 0.55,
+        "hauteur_z": 6.45
+      },
+      "fichier": "export/V_Arbre_Conifere.glb",
+      "triangles": 388,
+      "bornes_locales": {
+        "min": [
+          -1.5065,
+          -1.3935,
+          0.0
+        ],
+        "max": [
+          1.5065,
+          1.544,
+          6.4
+        ]
+      }
+    },
+    {
+      "id": "V_Arbre_Conifere",
+      "position": [
+        14.6,
+        12.6,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "conifere de fond 3",
+      "position_gltf": [
+        14.6,
+        0.0,
+        -12.6
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.55,
+        "profondeur_y": 0.55,
+        "hauteur_z": 6.45
+      },
+      "fichier": "export/V_Arbre_Conifere.glb",
+      "triangles": 388,
+      "bornes_locales": {
+        "min": [
+          -1.5065,
+          -1.3935,
+          0.0
+        ],
+        "max": [
+          1.5065,
+          1.544,
+          6.4
+        ]
+      }
+    },
+    {
+      "id": "V_Arbre_Conifere",
+      "position": [
+        -17.0,
+        12.4,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "conifere de fond 4",
+      "position_gltf": [
+        -17.0,
+        0.0,
+        -12.4
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 0.55,
+        "profondeur_y": 0.55,
+        "hauteur_z": 6.45
+      },
+      "fichier": "export/V_Arbre_Conifere.glb",
+      "triangles": 388,
+      "bornes_locales": {
+        "min": [
+          -1.5065,
+          -1.3935,
+          0.0
+        ],
+        "max": [
+          1.5065,
+          1.544,
+          6.4
+        ]
+      }
+    },
+    {
+      "id": "V_Terre",
+      "position": [
+        -11.5,
+        -11.6,
+        0.0
+      ],
+      "rotation_z_deg": 0,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "parcelle d'herbe 1",
+      "etiquette": false,
+      "position_gltf": [
+        -11.5,
+        0.0,
+        11.6
+      ],
+      "rotation_y_gltf_deg": 0,
+      "emprise_m": {
+        "largeur_x": 8.0,
+        "profondeur_y": 8.0,
+        "hauteur_z": 0.2
+      },
+      "fichier": "export/V_Terre.glb",
+      "triangles": 170,
+      "bornes_locales": {
+        "min": [
+          -4.0,
+          -4.0,
+          -0.0818
+        ],
+        "max": [
+          4.0,
+          4.0,
+          0.0818
+        ]
+      }
+    },
+    {
+      "id": "V_Terre",
+      "position": [
+        11.6,
+        -11.6,
+        0.0
+      ],
+      "rotation_z_deg": 7,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "parcelle d'herbe 2",
+      "etiquette": false,
+      "position_gltf": [
+        11.6,
+        0.0,
+        11.6
+      ],
+      "rotation_y_gltf_deg": 7,
+      "emprise_m": {
+        "largeur_x": 8.0,
+        "profondeur_y": 8.0,
+        "hauteur_z": 0.2
+      },
+      "fichier": "export/V_Terre.glb",
+      "triangles": 170,
+      "bornes_locales": {
+        "min": [
+          -4.0,
+          -4.0,
+          -0.0818
+        ],
+        "max": [
+          4.0,
+          4.0,
+          0.0818
+        ]
+      }
+    },
+    {
+      "id": "V_Terre",
+      "position": [
+        -13.0,
+        12.8,
+        0.0
+      ],
+      "rotation_z_deg": 14,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "parcelle d'herbe 3",
+      "etiquette": false,
+      "position_gltf": [
+        -13.0,
+        0.0,
+        -12.8
+      ],
+      "rotation_y_gltf_deg": 14,
+      "emprise_m": {
+        "largeur_x": 8.0,
+        "profondeur_y": 8.0,
+        "hauteur_z": 0.2
+      },
+      "fichier": "export/V_Terre.glb",
+      "triangles": 170,
+      "bornes_locales": {
+        "min": [
+          -4.0,
+          -4.0,
+          -0.0818
+        ],
+        "max": [
+          4.0,
+          4.0,
+          0.0818
+        ]
+      }
+    },
+    {
+      "id": "V_Terre",
+      "position": [
+        12.4,
+        14.6,
+        0.0
+      ],
+      "rotation_z_deg": 21,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "parcelle d'herbe 4",
+      "etiquette": false,
+      "position_gltf": [
+        12.4,
+        0.0,
+        -14.6
+      ],
+      "rotation_y_gltf_deg": 21,
+      "emprise_m": {
+        "largeur_x": 8.0,
+        "profondeur_y": 8.0,
+        "hauteur_z": 0.2
+      },
+      "fichier": "export/V_Terre.glb",
+      "triangles": 170,
+      "bornes_locales": {
+        "min": [
+          -4.0,
+          -4.0,
+          -0.0818
+        ],
+        "max": [
+          4.0,
+          4.0,
+          0.0818
+        ]
+      }
+    },
+    {
+      "id": "V_Terre",
+      "position": [
+        0.0,
+        -18.2,
+        0.0
+      ],
+      "rotation_z_deg": 28,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "parcelle d'herbe 5",
+      "etiquette": false,
+      "position_gltf": [
+        0.0,
+        0.0,
+        18.2
+      ],
+      "rotation_y_gltf_deg": 28,
+      "emprise_m": {
+        "largeur_x": 8.0,
+        "profondeur_y": 8.0,
+        "hauteur_z": 0.2
+      },
+      "fichier": "export/V_Terre.glb",
+      "triangles": 170,
+      "bornes_locales": {
+        "min": [
+          -4.0,
+          -4.0,
+          -0.0818
+        ],
+        "max": [
+          4.0,
+          4.0,
+          0.0818
+        ]
+      }
+    },
+    {
+      "id": "V_Terre",
+      "position": [
+        -18.0,
+        0.0,
+        0.0
+      ],
+      "rotation_z_deg": 35,
+      "echelle": 1.0,
+      "groupe": "decor",
+      "note": "parcelle d'herbe 6",
+      "etiquette": false,
+      "position_gltf": [
+        -18.0,
+        0.0,
+        -0.0
+      ],
+      "rotation_y_gltf_deg": 35,
+      "emprise_m": {
+        "largeur_x": 8.0,
+        "profondeur_y": 8.0,
+        "hauteur_z": 0.2
+      },
+      "fichier": "export/V_Terre.glb",
+      "triangles": 170,
+      "bornes_locales": {
+        "min": [
+          -4.0,
+          -4.0,
+          -0.0818
+        ],
+        "max": [
+          4.0,
+          4.0,
+          0.0818
+        ]
+      }
+    }
+  ],
+  "lampes": [
+    {
+      "id": "LAMPE_01",
+      "module": "V_Reverbere",
+      "position": [
+        -6.9,
+        5.34,
+        2.9
+      ],
+      "couleur": [
+        1.0,
+        0.63,
+        0.28
+      ],
+      "puissance_w": 95.0,
+      "portee_m": 9.0
+    },
+    {
+      "id": "LAMPE_02",
+      "module": "V_Reverbere",
+      "position": [
+        6.9,
+        0.94,
+        2.9
+      ],
+      "couleur": [
+        1.0,
+        0.63,
+        0.28
+      ],
+      "puissance_w": 95.0,
+      "portee_m": 9.0
+    },
+    {
+      "id": "LAMPE_03",
+      "module": "V_Reverbere",
+      "position": [
+        -3.2,
+        -7.26,
+        2.9
+      ],
+      "couleur": [
+        1.0,
+        0.63,
+        0.28
+      ],
+      "puissance_w": 95.0,
+      "portee_m": 9.0
+    },
+    {
+      "id": "LAMPE_04",
+      "module": "V_Reverbere",
+      "position": [
+        3.6,
+        -7.06,
+        2.9
+      ],
+      "couleur": [
+        1.0,
+        0.63,
+        0.28
+      ],
+      "puissance_w": 95.0,
+      "portee_m": 9.0
+    },
+    {
+      "id": "LAMPE_HALLE_1",
+      "module": "V_Halles",
+      "position": [
+        1.2,
+        3.2,
+        2.55
+      ],
+      "couleur": [
+        1.0,
+        0.66,
+        0.34
+      ],
+      "puissance_w": 60.0,
+      "portee_m": 7.0
+    },
+    {
+      "id": "LAMPE_HALLE_2",
+      "module": "V_Halles",
+      "position": [
+        5.6000000000000005,
+        5.6,
+        2.55
+      ],
+      "couleur": [
+        1.0,
+        0.66,
+        0.34
+      ],
+      "puissance_w": 60.0,
+      "portee_m": 7.0
+    }
+  ],
+  "zones": {
+    "place_combat": {
+      "centre": [
+        1.9,
+        -0.4,
+        0
+      ],
+      "rayon_m": 4.9,
+      "note": "zone ouverte entre le puits, les halles et la rue sud"
+    },
+    "spawn_joueur": {
+      "position": [
+        0.0,
+        -12.0,
+        0
+      ],
+      "cap_deg": 0
+    },
+    "spawn_citoyens": [
+      {
+        "position": [
+          1.7,
+          0.4,
+          0
+        ],
+        "role": "boulanger"
+      },
+      {
+        "position": [
+          5.8,
+          5.0,
+          0
+        ],
+        "role": "marchande"
+      },
+      {
+        "position": [
+          -0.6,
+          2.4,
+          0
+        ],
+        "role": "porteur d'eau"
+      },
+      {
+        "position": [
+          -2.9,
+          -2.6,
+          0
+        ],
+        "role": "enfant"
+      }
+    ],
+    "spawn_zombies": [
+      {
+        "position": [
+          0.0,
+          -15.2,
+          0
+        ],
+        "vague": 1,
+        "note": "rue sud"
+      },
+      {
+        "position": [
+          0.95,
+          15.4,
+          0
+        ],
+        "vague": 1,
+        "note": "ruelle nord"
+      },
+      {
+        "position": [
+          15.2,
+          0.0,
+          0
+        ],
+        "vague": 2,
+        "note": "ruelle est"
+      },
+      {
+        "position": [
+          -15.6,
+          -4.0,
+          0
+        ],
+        "vague": 2,
+        "note": "flanc ouest"
+      }
+    ],
+    "refuges": [
+      {
+        "id": "halles",
+        "position": [
+          4.0,
+          4.2,
+          0
+        ],
+        "rayon_m": 3.6
+      },
+      {
+        "id": "auberge",
+        "position": [
+          -9.6,
+          -2.6,
+          0
+        ],
+        "rayon_m": 2.4
+      }
+    ]
+  },
+  "ambiance": {
+    "heure": "nuit",
+    "ciel": "#05070D",
+    "lune": {
+      "azimut_deg": 320,
+      "elevation_deg": 42,
+      "couleur": [
+        0.58,
+        0.7,
+        1.0
+      ],
+      "intensite": 0.55
+    },
+    "brouillard": {
+      "couleur": "#0A0F1A",
+      "densite": 0.012,
+      "note": "brouillard leger pour detacher les lanternes"
+    }
+  },
+  "camera_suggeree": {
+    "vue_ensemble": {
+      "position": [
+        26.0,
+        -35.0,
+        20.0
+      ],
+      "cible": [
+        0.0,
+        0.6,
+        2.4
+      ],
+      "focale_mm": 38
+    },
+    "vue_joueur": {
+      "position": [
+        0.6,
+        -12.6,
+        1.68
+      ],
+      "cible": [
+        0.6,
+        2.0,
+        2.4
+      ],
+      "focale_mm": 30
+    }
+  },
+  "regles_jeu": {
+    "module_repetable": [
+      "V_Rue_Pavee",
+      "V_Barriere",
+      "V_Tonneau",
+      "V_Caisse",
+      "V_Arbre_Feuillu",
+      "V_Arbre_Conifere"
+    ],
+    "collision": "boites fournies par module (champ collision) ; les sols n'en ont pas",
+    "echelle_joueur_m": 1.75,
+    "hauteur_toits_max_m": 9.5
+  }
+}
