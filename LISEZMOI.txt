@@ -1,0 +1,34 @@
+VIGILE — Tenir jusqu'à l'aube
+=============================
+
+Shooter de survie en vue subjective dans le navigateur : une chapelle romane,
+huit heures de nuit, douze assauts de morts, et L'Officiant dans la nef.
+
+JOUER EN LIGNE
+  https://jfoissac.github.io/Vigile/
+
+JOUER HORS LIGNE (Windows)
+  1. Dézipper ce dossier où vous voulez.
+  2. Double-clic sur Lancer-Vigile.bat
+  3. Le navigateur s'ouvre sur http://127.0.0.1:8131/
+
+JOUER HORS LIGNE (macOS / Linux)
+  Ouvrir un terminal dans ce dossier :
+      python3 server.py 8131
+  puis ouvrir http://127.0.0.1:8131/
+
+COMMANDES
+  Z A S E / flèches   marcher        Maj   sprint        Espace   sauter
+  clic gauche         tirer          clic droit   objet actif / lunette
+  molette, 1..8       arme           R    recharger      I   inventaire
+  H / L / G           trousse, lanterne, fiole            M   son
+  1 / 2 / 3           faveur en fin de vague             Échap  pause
+
+  Le son démarre coupé (M pour l'activer). Les pistes musicales du
+  développement ne sont pas distribuées : le jeu tourne avec la bande-son
+  synthétisée.
+
+CODE SOURCE
+  https://github.com/JFoissac/Vigile
+
+Licence MIT pour le code — modèles de morts CC0 (Quaternius).
